@@ -56,6 +56,18 @@ const students = [
 const studentsWithIDs = students.map(student => [student.name, student.id]);
 console.log(studentsWithIDs)
 
+// return the name and id key value pair from each student in the object
+const studentsWithIDsObj = students.map(student => ({"name": student.name, "id": student.id}))
+console.log(studentsWithIDsObj)
 
-// const studentsObj = students.map(student => {student.name, student.id});
-// console.log(studentsObj)
+// add the students age to each student in the object
+let ages = [32, 26, 28]
+const studentsWithIDs1 = students.map(student => ({...student, "age":ages[student.id-1]}))
+console.log(studentsWithIDs1)
+
+// add the students age to each student in the object
+let ages1 = {Mark:32, Ariel:26, Jason:28}
+const studentsWithIDs2 = students.map(student => ({...student, "age":ages1[student.name]}))
+console.log(studentsWithIDs2)
+
+
