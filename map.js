@@ -6,15 +6,30 @@
 
 // Using a for loop
 
+let nums = [1, 2, 3, 4, 5];
+let results = [];
+for (let num of nums) {
+  results.push(num *2);
+}
 
-// Using map()
+console.log(results)
+
+// Using map() The map method expects me to pass it a function which will  be called on each element of the nums array.  
+
+const multByTwo = function (num) {
+  return num * 2;
+}
+const mapResults = nums.map(multByTwo); 
+console.log(mapResults)
 
 
 // Simplified w/ map()
-
+const simplified = nums.map(function(num){return num * 2}); 
+console.log(simplified)
 
 // Simplfied w/ map() + arrow function
-
+const arrow = nums.map(num => num * 2); 
+console.log(arrow)
 
 // With objects:
 const students = [
@@ -37,3 +52,10 @@ const students = [
     skill: 'CSS'
   },
 ];
+
+const studentsWithIDs = students.map(student => [student.name, student.id]);
+console.log(studentsWithIDs)
+
+
+// const studentsObj = students.map(student => {student.name, student.id});
+// console.log(studentsObj)
